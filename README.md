@@ -29,4 +29,40 @@ Lograr todas estas condiciones resulta en un entorno de desarrollo dificil de ma
 Webpack es un middleman que entiende la forma en la que enlazamos todos los modulos y assets del proyecto, y los convierte a assets listos para producción.
 
 ## Instalando webpack
+Webpack desde la versión 4 se puede instalar con npm
+```
+npm install webpack webpack-cli --save-dev
+```
 
+## Usando webpack
+La forma mas facil de usar webpack:
+```
+npx webpack --entry <entryModule> --output <outputModule> --mode production
+```
+
+Cambiando el mode a development genera un bundle legible para debuggear
+```
+npx webpack --entry <entryModule> --output <outputModule> --mode development
+```
+
+## Usando webpack.config
+Para extender la configuración de webpack se puede crear un archivo de configuración que por defecto se llama `webpack.config.js`. Un archivo de configuración con este contenido:
+```javascript
+const path = require('path');
+module.exports = {
+  entry: './index.js',
+  output: {
+    path: path.resolve(__dirname),
+    filename: 'bundle.js'
+  },
+  mode: 'development'
+}
+```
+hace que ejecutar:
+```
+npx webpack
+```
+sea equivalente a:
+```
+npx webpack --entry ./index.js --output ./bundle.js --mode development
+```
