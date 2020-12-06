@@ -11,7 +11,8 @@
     "build:multi": "webpack --config ./multi-entry-points/webpack.config.js",
     "build:css-loader": "webpack --config ./css-style-loader/webpack.config.js",
     "build:plugins": "webpack --config ./plugins/webpack.config.js",
-    "build:dev": "webpack-dev-server --config ./webpack-dev-server/webpack.config.js"
+    "build:dev": "webpack-dev-server --config ./webpack-dev-server/webpack.config.js",
+    "build:dev:hot-module": "webpack-dev-server --config ./hot-module-replacement/webpack.config.js"
   },
   "keywords": [],
   "author": "Miguel Prada <mapra99@gmail.com>",
