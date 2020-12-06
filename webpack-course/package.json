@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "build:local": "webpack --mode production",
+    "build:external": "webpack --config ./external/webpack.config.js",
+    "build:external:production": "webpack --config ./external/webpack.config.js --mode production"
   },
   "keywords": [],
   "author": "Miguel Prada <mapra99@gmail.com>",
